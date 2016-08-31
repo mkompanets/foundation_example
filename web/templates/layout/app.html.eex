@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello FoundationExample!</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text"><%= gettext "Welcome to %{name}", name: "Phoenix!" %></li>
+          <li>
+            <a href="#">One</a>
+            <ul class="menu vertical">
+              <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+              <li><a href="#">Two</a></li>
+              <li><a href="#">Three</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><input type="search" placeholder="Search"></li>
+          <li><button type="button" class="button">Search</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <%= render @view_module, @view_template, assigns %>
+
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>
+      $(document).ready(function() {
+        console.log('jQuery is a thing');
+        $(document).foundation();
+      });
+    </script>
+  </body>
+</html>
